@@ -339,11 +339,6 @@ h1>span:not(.title-period){color:var(--hero-accent)}
 .logo-strip-heading>p{font-size:15px;color:var(--muted);font-weight:600;line-height:1.5}
 .logo-strip-actions{display:flex;align-items:center;gap:24px;flex-shrink:0}
 .logo-strip-actions>.text-link{font-size:14px}
-.logo-motion-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;border-radius:4px;min-width:100px}
-.logo-motion-toggle[hidden]{display:none}
-.logo-motion-toggle svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.5;fill:none}
-.logo-motion-toggle .play-icon,.logo-motion-toggle[aria-pressed="true"] .pause-icon{display:none}
-.logo-motion-toggle[aria-pressed="true"] .play-icon{display:block}
 .logo-viewport{overflow:hidden}
 .logo-group{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0}
 .logo-group li{display:flex;justify-content:center}
@@ -353,7 +348,6 @@ h1>span:not(.title-period){color:var(--hero-accent)}
 .logo-strip.is-animated .logo-group{display:flex;flex-shrink:0;gap:24px;padding-right:24px}
 .logo-strip.is-animated .brand-logo{width:200px}
 .logo-strip.is-animated .logo-group-duplicate{display:flex}
-.logo-strip.is-paused .logo-track{animation-play-state:paused}
 @keyframes logo-drift{to{transform:translateX(-50%)}}
 .page-intro-grid{display:grid;grid-template-columns:1.15fr 1fr;align-items:end;gap:72px}
 .page-intro-grid>.lead,.page-intro-grid>div>.lead{max-width:520px;font-size:22px;line-height:1.55;margin-bottom:3px}

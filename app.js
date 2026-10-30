@@ -57,26 +57,13 @@
   if (logoStrip) {
     const track = logoStrip.querySelector('.logo-track');
     const group = track.querySelector('.logo-group');
-    const toggle = logoStrip.querySelector('.logo-motion-toggle');
     const duplicate = group.cloneNode(true);
     duplicate.classList.add('logo-group-duplicate');
     duplicate.setAttribute('aria-hidden', 'true');
     duplicate.inert = true;
     duplicate.querySelectorAll('img').forEach((img) => { img.alt = ''; });
     track.append(duplicate);
-    let paused = false;
-
-    function updateLogoMotion() {
-      logoStrip.classList.add('is-animated');
-      logoStrip.classList.toggle('is-paused', paused);
-      toggle.hidden = false;
-      toggle.setAttribute('aria-pressed', String(paused));
-      toggle.setAttribute('aria-label', `${paused ? 'Resume' : 'Pause'} automatic logo scrolling`);
-      toggle.querySelector('span').textContent = paused ? 'Resume' : 'Pause';
-    }
-
-    toggle.addEventListener('click', () => { paused = !paused; updateLogoMotion(); });
-    updateLogoMotion();
+    logoStrip.classList.add('is-animated');
   }
 
   const sectionLinks = [...nav.querySelectorAll('a[href^="#"]')];

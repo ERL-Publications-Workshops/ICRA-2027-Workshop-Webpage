@@ -19,14 +19,14 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 - `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
-- `app.js`: theme selection, mobile navigation, active section tracking and logo-strip motion controls.
+- `app.js`: theme selection, mobile navigation, active section tracking and continuous logo-strip animation.
 - `assets/`: self-hosted images, institutional logos, fonts and favicon. `portrait-sources.json` and `logo-sources.json` record their sources.
 
 Each page has its own title, main heading and navigation state. Header, footer and theme-control markup are present in each HTML file so the entire site works without a build step. Keep that shared markup consistent when editing. All page and asset links are relative for GitHub Pages repository hosting.
 
 The theme control offers direct **Light**, **Dark** and **Use device setting** buttons. The sun, moon and monitor icons select the mode in one click. Keyboard arrow keys move between modes. The preference persists across reloads and stays synchronized between tabs. All core content and links remain available without JavaScript. Nonessential transitions respect the system preference for reduced motion.
 
-The institutional logo strips below the homepage and institutions-page introductions start scrolling automatically and loops continuously. Hover and focus do not interrupt it. The Pause/Resume button works with a mouse or keyboard. As explicitly requested, this strip also autoplays when the device requests reduced motion; its visible Pause button remains available. Disabled JavaScript shows all eight logos in a static grid. The institutions page groups the same marks by organizer and speaker affiliations. Logos retain their source colors in both themes and do not indicate confirmed sponsorship.
+The institutional logo strips below the homepage and institutions-page introductions start scrolling automatically and loop continuously. They have no pause buttons, and hover or focus does not interrupt movement. As requested, the strips also autoplay when the device requests reduced motion. Disabled JavaScript shows all eight logos in a static grid. The institutions page groups the same marks by organizer and speaker affiliations. Logos retain their source colors in both themes and do not indicate confirmed sponsorship.
 
 Every footer credits the design to Alp Ortakci and links to his website. The public contact label is **Contact us**, using the proposal's existing primary contact mailbox.
 
