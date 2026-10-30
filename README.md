@@ -15,6 +15,7 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 ## Editing
 
 - `index.html`: workshop overview, programme, speakers and organizers.
+- `challenge.html`: simulation challenge, planned setup, participation route and resource status.
 - `call-for-papers.html`: the planned contribution format, topics and submission status.
 - `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
@@ -40,7 +41,7 @@ Before public release, review the workshop title, acceptance status, date, locat
 
 Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Portraits are present for all three speakers and seven organizers. Moritz Graf's initials remain until a verified portrait is available.
 
-The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The challenge summary identifies the proposed TU Hamburg ROS 2/Gazebo framework and participation without physical underwater hardware. The CFP describes the planned stage visibility for accepted contributions. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
+The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The dedicated challenge page describes the proposed TU Hamburg ROS 2/Gazebo framework, teleoperated and autonomous baselines, participation without physical underwater hardware, and planned workshop presentations. Its February 2027 release remains subject to workshop acceptance. The generic UVMS concept illustration in `assets/images/challenge-uvms.svg` is not a simulator screenshot or a specification of the actual platform or task. The CFP describes the planned stage visibility for accepted contributions. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
 
 The Call for Papers section describes the planned two-page abstracts and presentation formats. Submissions are not open, and dates and review rules remain unconfirmed. The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 
