@@ -14,13 +14,13 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 
 ## Editing
 
-- `index.html`: workshop copy, programme, speakers and organizers.
+- `index.html`: workshop copy, programme, speakers, organizers, Call for Papers and Sponsors sections.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
 - `app.js`: theme selection, mobile navigation and active section tracking.
 - `assets/`: self-hosted images, fonts and favicon.
 
-The theme control offers **System**, **Light** and **Dark**. A manual selection persists in the browser. All core content and links remain available without JavaScript. Motion respects the system preference for reduced motion.
+The theme control offers direct **Light**, **Dark** and **Use device setting** buttons. The sun, moon and monitor icons select the mode in one click. Keyboard arrow keys move between modes. The preference persists across reloads and stays synchronized between tabs. All core content and links remain available without JavaScript. Motion respects the system preference for reduced motion.
 
 ## GitHub Pages
 
@@ -31,6 +31,8 @@ Before public release, review the workshop title, acceptance status, date, locat
 ## Content and image sources
 
 Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Organizer initials stand in for portraits still being collected.
+
+The Call for Papers section describes the planned two-page abstracts and presentation formats. Submissions are not open, and dates and review rules remain unconfirmed. The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 
 The hero shows a **work-class ROV**, identified in its caption as context for underwater intervention. It does not depict the proposed small-scale challenge platform. The photograph was donated to the public domain by Oceaneering's Duncan McLean and uploaded by Frank van Mierlo: [source and rights](https://commons.wikimedia.org/wiki/File:ROV_working_on_a_subsea_structure.jpg).
 
