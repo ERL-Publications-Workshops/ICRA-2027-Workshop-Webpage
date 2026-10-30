@@ -19,12 +19,16 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 - `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
-- `app.js`: theme selection, mobile navigation and active section tracking.
-- `assets/`: self-hosted images, fonts and favicon. `portrait-sources.json` records the portrait sources.
+- `app.js`: theme selection, mobile navigation, active section tracking and logo-strip motion controls.
+- `assets/`: self-hosted images, institutional logos, fonts and favicon. `portrait-sources.json` and `logo-sources.json` record their sources.
 
 Each page has its own title, main heading and navigation state. Header, footer and theme-control markup are present in each HTML file so the entire site works without a build step. Keep that shared markup consistent when editing. All page and asset links are relative for GitHub Pages repository hosting.
 
 The theme control offers direct **Light**, **Dark** and **Use device setting** buttons. The sun, moon and monitor icons select the mode in one click. Keyboard arrow keys move between modes. The preference persists across reloads and stays synchronized between tabs. All core content and links remain available without JavaScript. Motion respects the system preference for reduced motion.
+
+The institutional logo strip below the homepage hero scrolls automatically. Its pause control works with a mouse or keyboard, and movement also pauses on hover or focus. Reduced-motion preferences and disabled JavaScript show all eight logos in a static grid. The institutions page groups the same marks by organizer and speaker affiliations. Logos retain their source colors in both themes and do not indicate confirmed sponsorship.
+
+Every footer credits the design to Alp Ortakci and links to his website. The public contact label is **Contact us**, using the proposal's existing primary contact mailbox.
 
 ## GitHub Pages
 
@@ -35,6 +39,8 @@ Before public release, review the workshop title, acceptance status, date, locat
 ## Content and image sources
 
 Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Portraits are present for all three speakers and seven organizers. Moritz Graf's initials remain until a verified portrait is available.
+
+The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The challenge summary identifies the proposed TU Hamburg ROS 2/Gazebo framework and participation without physical underwater hardware. The CFP describes the planned stage visibility for accepted contributions. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
 
 The Call for Papers section describes the planned two-page abstracts and presentation formats. Submissions are not open, and dates and review rules remain unconfirmed. The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 

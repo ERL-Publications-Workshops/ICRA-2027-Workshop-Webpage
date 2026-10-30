@@ -53,6 +53,34 @@
   });
   window.matchMedia('(min-width: 1201px)').addEventListener('change', closeMenu);
 
+  const logoStrip = document.querySelector('.logo-strip');
+  if (logoStrip) {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const track = logoStrip.querySelector('.logo-track');
+    const group = track.querySelector('.logo-group');
+    const toggle = logoStrip.querySelector('.logo-motion-toggle');
+    const duplicate = group.cloneNode(true);
+    duplicate.classList.add('logo-group-duplicate');
+    duplicate.setAttribute('aria-hidden', 'true');
+    duplicate.inert = true;
+    duplicate.querySelectorAll('img').forEach((img) => { img.alt = ''; });
+    track.append(duplicate);
+    let paused = false;
+
+    function updateLogoMotion() {
+      logoStrip.classList.toggle('is-animated', !motionPreference.matches);
+      logoStrip.classList.toggle('is-paused', paused);
+      toggle.hidden = motionPreference.matches;
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.setAttribute('aria-label', `${paused ? 'Resume' : 'Pause'} automatic logo scrolling`);
+      toggle.querySelector('span').textContent = paused ? 'Resume' : 'Pause';
+    }
+
+    toggle.addEventListener('click', () => { paused = !paused; updateLogoMotion(); });
+    motionPreference.addEventListener('change', updateLogoMotion);
+    updateLogoMotion();
+  }
+
   const sectionLinks = [...nav.querySelectorAll('a[href^="#"]')];
   if ('IntersectionObserver' in window && sectionLinks.length) {
     const sections = document.querySelectorAll('main > section[id]');
