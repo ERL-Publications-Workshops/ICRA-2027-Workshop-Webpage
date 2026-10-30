@@ -1,6 +1,6 @@
 # SHRIMP · ICRA 2027
 
-A static workshop website for **SHRIMP: Small-scale Hardware and Robotics for Intervention and Manipulation in Practice**. The subtitle is **Dronification of Underwater Robotics**. Alp supplied the new workshop name on 30 October 2026.
+A static workshop website for **SHRIMP: Small-scale Hardware and Robotics for Intervention and Manipulation in Practice**. The subtitle is **Dronification of Underwater Robotics**.
 
 ## Preview
 
@@ -35,9 +35,11 @@ Every footer credits the design to Alp Ortakci and links to his website. The pub
 
 ## GitHub Pages
 
-This directory is ready for branch-based GitHub Pages hosting from the repository root. All internal asset paths are relative, so the repository URL prefix works. `.nojekyll` disables unnecessary processing. No hosting settings have been changed by this draft.
+The website is published at <https://erl-publications-workshops.github.io/ICRA-2027-Workshop-Webpage/>. The workflow in `.github/workflows/deploy-pages.yml` deploys every push to `main`. It can also be run manually from the repository's Actions tab. Repository Settings > Pages must use **GitHub Actions** as the publishing source.
 
-Before public release, review the workshop title, acceptance status, date, location, agenda and portraits. The pages retain `noindex, nofollow` metadata. Visible review-only banners and footer notices have been removed. The metadata does not make a published page private.
+Only the three HTML pages, styles, browser scripts and assets are included in the deployment. No build step or package installation is required. All internal asset paths are relative, so the repository URL prefix and a future custom domain both work. `.nojekyll` disables unnecessary processing.
+
+The workshop proposal remains a work in progress. The pages retain `noindex, nofollow` metadata while the name and programme are being finalized. This metadata does not make the published website private. A custom domain can be configured later without changing the site's page structure.
 
 ## Content and image sources
 
