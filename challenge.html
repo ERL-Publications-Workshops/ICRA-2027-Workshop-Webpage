@@ -6,25 +6,25 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#edf5f4">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Explore the planned ICRA 2027 underwater manipulation simulation challenge: a common ROS 2/Gazebo setup, teleoperated and autonomous baselines, and participation without underwater hardware.">
-  <title>Simulation Challenge | ICRA 2027 Underwater Robotics</title>
+  <meta name="description" content="The SHRIMP Challenge at ICRA 2027: a common ROS 2/Gazebo setup, teleoperated and autonomous baselines, and participation without underwater hardware.">
+  <title>The SHRIMP Challenge | ICRA 2027</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/space-grotesk.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
   <script src="theme.js"></script>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
+  <script src="rov-animation.js" defer></script>
 </head>
 <body class="secondary-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html#top" aria-label="Underwater robotics workshop, workshop home">
-        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path d="M4 22c5-7 11-7 16 0s11 7 16 0M7 28c4-4 9-4 13 0s9 4 13 0M20 3v10m-4-4 4 4 4-4"/></svg>
-        <span class="brand-full">UNDERWATER ROBOTICS<span class="brand-sub">ICRA 2027 WORKSHOP PROPOSAL</span></span><span class="brand-compact" aria-hidden="true">ICRA<br>2027</span>
+      <a class="brand" href="index.html#top" aria-label="SHRIMP workshop, workshop home">
+        <span class="brand-wordmark">SHRIMP<span>.</span><small>ICRA 2027 WORKSHOP</small></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation" id="main-nav">
-        <a href="index.html#overview">Overview</a><a href="index.html#speakers">Speakers</a><a href="index.html#programme">Programme</a><a href="challenge.html" aria-current="page">Challenge</a><a href="call-for-papers.html">Call for Papers</a><a href="index.html#organizers">Organizers</a><a href="sponsors-institutions.html">Sponsors &amp; Institutions</a>
+        <a href="index.html#overview">Overview</a><a href="index.html#speakers">Speakers</a><a href="index.html#programme">Programme</a><a href="challenge.html" aria-current="page">Challenge</a><a href="index.html#organizers">Organizers</a><a href="sponsors-institutions.html">Sponsors &amp; Institutions</a>
       </nav>
       <div class="header-controls">
         <fieldset class="theme-control">
@@ -40,64 +40,54 @@
   </header>
 
   <main id="main">
-    <section class="challenge-hero" id="top" aria-labelledby="challenge-title">
+    <section class="challenge-masthead" id="top" aria-labelledby="challenge-title">
       <div class="container">
-        <div class="section-kicker"><a href="index.html">Workshop home</a><span aria-hidden="true">/</span> SIMULATION CHALLENGE</div>
-        <div class="challenge-hero-grid">
-          <div class="challenge-hero-copy">
-            <p class="eyebrow">ICRA 2027 · UNDERWATER ROBOTICS</p>
-            <h1 id="challenge-title">Take underwater<br><span>manipulation</span><br>further.</h1>
-            <p class="lead">Your approach. A shared simulation.<br>No underwater hardware required.</p>
-            <p class="challenge-hero-description">Develop and compare methods for a small-scale underwater vehicle with a manipulator. Build on a common setup, then bring what you learn to the workshop.</p>
-            <a class="button button-primary" href="#challenge-setup">Inside the challenge <span aria-hidden="true">↓</span></a>
-          </div>
-          <figure class="challenge-hero-visual ocean-panel">
-            <div class="challenge-visual-label" aria-hidden="true"><span>VEHICLE + MANIPULATOR</span><span>↗</span></div>
-            <img src="assets/images/challenge-uvms.svg" width="800" height="650" alt="Concept illustration of a compact underwater vehicle carrying a jointed robotic arm." fetchpriority="high">
-            <figcaption><span>Small-scale underwater manipulation</span><small>Concept illustration. The challenge configuration will be released with the task.</small></figcaption>
-          </figure>
+        <div class="challenge-breadcrumb"><a href="index.html">SHRIMP home</a><span aria-hidden="true">/</span><span>THE CHALLENGE</span></div>
+        <div class="challenge-title-row">
+          <div><p class="eyebrow">SMALL-SCALE ROBOTS. HANDS-ON IDEAS.</p><h1 id="challenge-title">The SHRIMP<br><span>Challenge.</span></h1></div>
+          <div class="challenge-deck"><p>A shared underwater world.<br>A different approach: yours.</p><p>Develop, test and compare methods for underwater manipulation in simulation. No underwater hardware required.</p><a class="text-link" href="#challenge-setup">Explore the challenge <span aria-hidden="true">↓</span></a></div>
         </div>
-        <ul class="challenge-principles" aria-label="Challenge at a glance"><li><span>01</span> A common simulation</li><li><span>02</span> Two starting baselines</li><li><span>03</span> Comparable results</li></ul>
+        <figure class="challenge-playground">
+          <div class="playground-labels"><span>UNDERWATER MANIPULATION</span><span>ROS 2 / GAZEBO</span></div>
+          <div class="rov-scene challenge-rov" role="img" aria-label="A looping pixel BlueROV2 descends, grasps a small object, carries it out of view and returns to collect another."><canvas width="480" height="160" aria-hidden="true"></canvas></div>
+          <figcaption><span>Small robots. Real interaction.</span><small>Illustrative BlueROV2 pickup sequence</small></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section challenge-setup" id="challenge-setup" aria-labelledby="setup-title">
+    <section class="section challenge-brief" id="challenge-setup" aria-labelledby="brief-title">
       <div class="container">
-        <p class="section-kicker"><span class="section-number">01 /</span> THE PLANNED SETUP</p>
-        <div class="section-heading"><h2 id="setup-title">A shared starting point.<br><span class="accent">Room for your approach.</span></h2><p>Improve an individual component or rethink the whole system. The common setup makes it possible to compare what works and understand what does not.</p></div>
-        <div class="challenge-components">
-          <article><span class="component-number" aria-hidden="true">01</span><p class="eyebrow">THE ENVIRONMENT</p><h3>One simulation.<br>Open to more teams.</h3><p>The planned environment builds on TU Hamburg’s ROS 2/Gazebo teaching framework, with a common small-scale underwater vehicle-manipulator system (UVMS).</p></article>
-          <article><span class="component-number" aria-hidden="true">02</span><p class="eyebrow">THE STARTING POINT</p><h3>Teleoperated.<br>Autonomous.</h3><p>Two baselines will provide starting points for testing ideas in perception, control, planning and system integration.</p></article>
-          <article><span class="component-number" aria-hidden="true">03</span><p class="eyebrow">THE COMPARISON</p><h3>A common task.<br>Shared evidence.</h3><p>A manipulation task and success metrics will let teams compare results. The exact task, scoring and submission rules will accompany the challenge release.</p></article>
+        <div class="challenge-brief-heading"><p class="section-kicker">THE IDEA</p><h2 id="brief-title">A common starting point.<br><span class="accent">What will you do with it?</span></h2><p>Improve one component or rethink the whole system. The shared setup gives teams a way to compare approaches and uncover the roadblocks to reliable underwater manipulation.</p></div>
+        <div class="challenge-specs">
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m6 15 18-9 18 9-18 9-18-9Zm0 0v18l18 9 18-9V15M24 24v18M15 10l18 9"/></svg><h3>The environment</h3><p>A small-scale underwater vehicle-manipulator system, built on TU Hamburg’s ROS 2/Gazebo teaching framework.</p></article>
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h11v10H8zM29 26h11v10H29zM19 17h15v9M13 22v10h16M8 36v5m-3-2h6M35 6v8m-4-4h8"/></svg><h3>Two ways to begin</h3><p>Teleoperated and autonomous baselines to build on, from perception and planning to control and integration.</p></article>
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 37h33M13 32V21h6v11M25 32V11h6v21M37 32V17h5v15M7 8h8m-4-4v8"/></svg><h3>A shared measure</h3><p>One manipulation task and common success metrics. The exact task, scoring and submission rules are still being defined.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section challenge-journey" aria-labelledby="journey-title">
-      <div class="container challenge-journey-grid">
-        <div><p class="section-kicker"><span class="section-number">02 /</span> FROM SIMULATION TO DISCUSSION</p><h2 id="journey-title">Build before.<br><span class="accent">Share together.</span></h2><p class="journey-intro">The challenge feeds directly into the workshop’s Roadblock and Action Roadmap: what can these systems do today, and what should the community tackle next?</p><a class="text-link" href="index.html#programme">See the workshop programme <span aria-hidden="true">↗</span></a></div>
-        <ol class="challenge-timeline">
-          <li><span class="timeline-step" aria-hidden="true">01</span><div><p class="eyebrow">FEBRUARY 2027 · PLANNED RELEASE</p><h3>Get the shared setup.</h3><p>The simulator configuration, task, metrics and baselines are planned for February 2027, subject to workshop acceptance.</p></div></li>
-          <li><span class="timeline-step" aria-hidden="true">02</span><div><p class="eyebrow">BEFORE THE WORKSHOP</p><h3>Develop. Test. Compare.</h3><p>Improve a component or the full system and evaluate your approach in the common environment. Participation will not require physical underwater hardware.</p></div></li>
-          <li><span class="timeline-step" aria-hidden="true">03</span><div><p class="eyebrow">AT THE WORKSHOP</p><h3>Bring the lessons with you.</h3><p>The proposal plans posters and short pitches for the top three teams, plus a challenge session to discuss selected results, failure cases and open roadblocks.</p></div></li>
+    <section class="challenge-route" aria-labelledby="route-title">
+      <div class="container">
+        <div class="challenge-route-heading"><p class="section-kicker">THE PATH TO ICRA 2027</p><h2 id="route-title">From the first test<br>to the shared lesson.</h2></div>
+        <ol class="challenge-route-steps">
+          <li><span class="route-dot" aria-hidden="true">01</span><p class="eyebrow">FEBRUARY 2027</p><h3>Get the setup.</h3><p>The simulator, task and baselines are planned for release in February, subject to workshop acceptance.</p></li>
+          <li><span class="route-dot" aria-hidden="true">02</span><p class="eyebrow">BEFORE THE WORKSHOP</p><h3>Make your approach.</h3><p>Develop your method and compare results in the common environment. Submission details will follow with the challenge materials.</p></li>
+          <li><span class="route-dot" aria-hidden="true">03</span><p class="eyebrow">AT THE WORKSHOP</p><h3>Share what you learn.</h3><p>The proposal plans posters and short pitches for the top three teams. Results and failure cases feed into the Roadblock and Action Roadmap.</p></li>
         </ol>
       </div>
     </section>
 
-    <section class="section challenge-resources" id="challenge-resources" aria-labelledby="resources-title">
-      <div class="container challenge-resources-grid">
-        <div><p class="section-kicker"><span class="section-number">03 /</span> TAKING PART</p><h2 id="resources-title">The next step<br><span class="accent">starts here.</span></h2><p>Challenge resources are not available yet. The task specification, evaluation details, submission instructions and deadlines will be published here when released.</p><a class="button button-primary" href="mailto:daniel.duecker@tum.de?subject=ICRA%202027%20simulation%20challenge%20enquiry">Contact us <span aria-hidden="true">↗</span></a></div>
-        <aside class="challenge-papers" aria-labelledby="challenge-papers-title"><p class="eyebrow">HAVE RESEARCH TO SHARE?</p><h3 id="challenge-papers-title">Bring your work<br>to the conversation.</h3><p>The separate Call for Papers outlines the planned two-page abstracts and presentation formats for research, field experience and application needs.</p><a class="text-link" href="call-for-papers.html">Explore the Call for Papers <span aria-hidden="true">↗</span></a></aside>
-      </div>
+    <section class="challenge-invite" id="challenge-resources" aria-labelledby="invite-title">
+      <div class="container challenge-invite-inner"><div><p class="eyebrow">BRING YOUR APPROACH</p><h2 id="invite-title">Let’s take it underwater.</h2><p>The challenge materials and deadlines will appear here when released. Until then, get in touch with the organizing team.</p></div><div class="challenge-invite-actions"><a class="button button-primary" href="mailto:daniel.duecker@tum.de?subject=SHRIMP%20challenge%20enquiry">Contact us <span aria-hidden="true">↗</span></a><a class="text-link" href="index.html#programme">See the programme <span aria-hidden="true">↗</span></a></div></div>
     </section>
   </main>
 
   <footer class="site-footer" id="site-footer">
     <div class="container footer-shell">
       <div class="footer-topline">
-        <a class="footer-identity" href="index.html" aria-label="ICRA 2027 Underwater Robotics, workshop home">
+        <a class="footer-identity" href="index.html" aria-label="SHRIMP, ICRA 2027 workshop home">
           <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path d="M4 22c5-7 11-7 16 0s11 7 16 0M7 28c4-4 9-4 13 0s9 4 13 0M20 3v10m-4-4 4 4 4-4"/></svg>
-          <span><span class="footer-eyebrow">ICRA 2027 WORKSHOP</span><strong>Underwater Robotics</strong></span>
+          <span><span class="footer-eyebrow">ICRA 2027 · UNDERWATER ROBOTICS</span><strong>SHRIMP.</strong></span>
         </a>
         <div class="footer-actions">
           <a class="footer-contact" href="mailto:daniel.duecker@tum.de">Contact us <span aria-hidden="true">↗</span></a>
@@ -108,7 +98,7 @@
         <p class="design-credit">Website designed by <a href="https://www.alportakci.com/">Alp Ortakci</a></p>
         <details class="credits">
           <summary>Image &amp; logo credits <span class="footer-credits-symbol" aria-hidden="true">+</span></summary>
-          <div class="credits-content"><p>Underwater photograph: Oceaneering, donated to the public domain by Duncan McLean and uploaded by Frank van Mierlo. <a href="https://commons.wikimedia.org/wiki/File:ROV_working_on_a_subsea_structure.jpg">Original photograph and source</a>. A work-class vehicle is shown as context for underwater intervention, not as the workshop’s small-scale platform.</p><p>Portraits from the public profiles of <a href="https://www.lsu.edu/eng/mie/people/faculty/barbalata.php">Corina Barbalata</a>, <a href="https://marco-tognon-robotics.com/">Marco Tognon</a> and <a href="https://www.ce.cit.tum.de/en/itr/sosnowski/">Stefan Sosnowski</a>. Additional portraits: <a href="https://www.alportakci.com/">Alp Ortakci</a>, <a href="https://sladalley.github.io/">Seyonne Leslie-Dalley</a>, <a href="https://www.tuhh.de/mum/team/wimi/nathalie-bauschmann">Nathalie Bauschmann</a>, <a href="https://cradlerobotics.co.uk/about/team/">Pawel Ladosz</a>, <a href="https://ignaciocarlucho.github.io/People/">Michele Grimaldi</a>, <a href="https://annualreport.mbari.org/2023/">Giancarlo Troni</a>, <a href="https://hippocampusrobotics.github.io/people/">Daniel A. Duecker</a>. Portrait rights remain with their respective owners.</p><p>Institutional logos from official sources: <a href="https://www.tum.de/en/">Technical University of Munich</a> · <a href="https://www.manchester.ac.uk/">University of Manchester</a> · <a href="https://www.tuhh.de/tuhh/en/startpage">Hamburg University of Technology</a> · <a href="https://annualreport.mbari.org/2023/">Monterey Bay Aquarium Research Institute</a> · <a href="https://www.lsu.edu/">Louisiana State University</a> · <a href="https://new.inria.cl/es/node/616">Inria</a> · <a href="https://www.hw.ac.uk/">Heriot-Watt University</a> · <a href="https://thenationalrobotarium.com/">The National Robotarium</a>. The marks identify affiliations and remain the property of their respective owners.</p></div>
+          <div class="credits-content"><p>SHRIMP stands for Small-scale Hardware and Robotics for Intervention and Manipulation in Practice. The pixel BlueROV2 scene is an original illustration inspired by <a href="https://bluerobotics.com/learn/newton-subsea-gripper-installation/">Blue Robotics’ vehicle and gripper reference</a>. It does not specify the final challenge platform or task.</p><p>Underwater photograph: Oceaneering, donated to the public domain by Duncan McLean and uploaded by Frank van Mierlo. <a href="https://commons.wikimedia.org/wiki/File:ROV_working_on_a_subsea_structure.jpg">Original photograph and source</a>. A work-class vehicle is shown as context for underwater intervention, not as the workshop’s small-scale platform.</p><p>Portraits from the public profiles of <a href="https://www.lsu.edu/eng/mie/people/faculty/barbalata.php">Corina Barbalata</a>, <a href="https://marco-tognon-robotics.com/">Marco Tognon</a> and <a href="https://www.ce.cit.tum.de/en/itr/sosnowski/">Stefan Sosnowski</a>. Additional portraits: <a href="https://www.alportakci.com/">Alp Ortakci</a>, <a href="https://sladalley.github.io/">Seyonne Leslie-Dalley</a>, <a href="https://www.tuhh.de/mum/team/wimi/nathalie-bauschmann">Nathalie Bauschmann</a>, <a href="https://cradlerobotics.co.uk/about/team/">Pawel Ladosz</a>, <a href="https://ignaciocarlucho.github.io/People/">Michele Grimaldi</a>, <a href="https://annualreport.mbari.org/2023/">Giancarlo Troni</a>, <a href="https://hippocampusrobotics.github.io/people/">Daniel A. Duecker</a>. Portrait rights remain with their respective owners.</p><p>Institutional logos from official sources: <a href="https://www.tum.de/en/">Technical University of Munich</a> · <a href="https://www.manchester.ac.uk/">University of Manchester</a> · <a href="https://www.tuhh.de/tuhh/en/startpage">Hamburg University of Technology</a> · <a href="https://annualreport.mbari.org/2023/">Monterey Bay Aquarium Research Institute</a> · <a href="https://www.lsu.edu/">Louisiana State University</a> · <a href="https://new.inria.cl/es/node/616">Inria</a> · <a href="https://www.hw.ac.uk/">Heriot-Watt University</a> · <a href="https://thenationalrobotarium.com/">The National Robotarium</a>. The marks identify affiliations and remain the property of their respective owners.</p></div>
         </details>
       </div>
     </div>

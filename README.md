@@ -1,6 +1,6 @@
-# ICRA 2027 Underwater Robotics Workshop
+# SHRIMP · ICRA 2027
 
-A static, review-stage workshop website for **Dronification of Underwater Robotics: Accessible Manipulation with Small-Scale Platforms**.
+A static workshop website for **SHRIMP: Small-scale Hardware and Robotics for Intervention and Manipulation in Practice**. The subtitle is **Dronification of Underwater Robotics**. Alp supplied the new workshop name on 30 October 2026.
 
 ## Preview
 
@@ -16,10 +16,10 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 
 - `index.html`: workshop overview, programme, speakers and organizers.
 - `challenge.html`: simulation challenge, planned setup, participation route and resource status.
-- `call-for-papers.html`: the planned contribution format, topics and submission status.
 - `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
+- `rov-animation.js`: original pixel BlueROV2 pickup loops in the workshop overview and challenge page.
 - `app.js`: theme selection, mobile navigation, active section tracking and continuous logo-strip animation.
 - `assets/`: self-hosted images, institutional logos, fonts and favicon. `portrait-sources.json` and `logo-sources.json` record their sources.
 
@@ -41,9 +41,9 @@ Before public release, review the workshop title, acceptance status, date, locat
 
 Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Portraits are present for all three speakers and seven organizers. Moritz Graf's initials remain until a verified portrait is available.
 
-The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The dedicated challenge page describes the proposed TU Hamburg ROS 2/Gazebo framework, teleoperated and autonomous baselines, participation without physical underwater hardware, and planned workshop presentations. Its February 2027 release remains subject to workshop acceptance. The generic UVMS concept illustration in `assets/images/challenge-uvms.svg` is not a simulator screenshot or a specification of the actual platform or task. The CFP describes the planned stage visibility for accepted contributions. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
+The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The dedicated challenge page describes the proposed TU Hamburg ROS 2/Gazebo framework, teleoperated and autonomous baselines, participation without physical underwater hardware, and planned workshop presentations. Its February 2027 release remains subject to workshop acceptance. The homepage feature uses the generic UVMS concept illustration in `assets/images/challenge-uvms.svg`. The new challenge page and workshop overview use an original pixel BlueROV2 animation. Neither illustration specifies the actual challenge platform or task. The animated robot approaches an object, closes its gripper, lifts it, leaves the frame, and returns from the opposite side. Objects change between loops. The scene rests when offscreen or hidden and shows a still frame when reduced motion is requested. The visual reference is Blue Robotics’ [vehicle and gripper guide](https://bluerobotics.com/learn/newton-subsea-gripper-installation/). The separate Call for Papers page and its navigation have been removed at Alp’s request. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
 
-The Call for Papers section describes the planned two-page abstracts and presentation formats. Submissions are not open, and dates and review rules remain unconfirmed. The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
+The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 
 The hero shows a **work-class ROV**, identified in its caption as context for underwater intervention. It does not depict the proposed small-scale challenge platform. The photograph was donated to the public domain by Oceaneering's Duncan McLean and uploaded by Frank van Mierlo: [source and rights](https://commons.wikimedia.org/wiki/File:ROV_working_on_a_subsea_structure.jpg).
 
