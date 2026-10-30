@@ -34,7 +34,7 @@ Every footer credits the design to Alp Ortakci and links to his website. The pub
 
 This directory is ready for branch-based GitHub Pages hosting from the repository root. All internal asset paths are relative, so the repository URL prefix works. `.nojekyll` disables unnecessary processing. No hosting settings have been changed by this draft.
 
-Before public release, review the workshop title, acceptance status, date, location, agenda and portraits. The page currently carries a review-only banner and `noindex, nofollow` metadata. These indicate draft status and do not make a published page private.
+Before public release, review the workshop title, acceptance status, date, location, agenda and portraits. The pages retain `noindex, nofollow` metadata. Visible review-only banners and footer notices have been removed. The metadata does not make a published page private.
 
 ## Content and image sources
 
