@@ -55,7 +55,6 @@
 
   const logoStrip = document.querySelector('.logo-strip');
   if (logoStrip) {
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const track = logoStrip.querySelector('.logo-track');
     const group = track.querySelector('.logo-group');
     const toggle = logoStrip.querySelector('.logo-motion-toggle');
@@ -68,16 +67,15 @@
     let paused = false;
 
     function updateLogoMotion() {
-      logoStrip.classList.toggle('is-animated', !motionPreference.matches);
+      logoStrip.classList.add('is-animated');
       logoStrip.classList.toggle('is-paused', paused);
-      toggle.hidden = motionPreference.matches;
+      toggle.hidden = false;
       toggle.setAttribute('aria-pressed', String(paused));
       toggle.setAttribute('aria-label', `${paused ? 'Resume' : 'Pause'} automatic logo scrolling`);
       toggle.querySelector('span').textContent = paused ? 'Resume' : 'Pause';
     }
 
     toggle.addEventListener('click', () => { paused = !paused; updateLogoMotion(); });
-    motionPreference.addEventListener('change', updateLogoMotion);
     updateLogoMotion();
   }
 
