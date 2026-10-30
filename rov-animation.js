@@ -105,7 +105,26 @@
       rect((i * 67 + elapsed * (i % 2 ? 1 : -1) + 640) % 320, 22 + (i * 23) % 101, i % 4 ? 1 : 2, 1, colors.speck);
     }
     ctx.globalAlpha = 1;
-    if (!carrying) object(targetX, 135);
+    if (!carrying) {
+      const fall = Math.min(1, t / 3.4);
+      const drift = Math.sin(fall * Math.PI * 3) * 6 * (1 - fall);
+      let objectY = ease(-12, 135, fall);
+      if (t > 3.4 && t < 3.9) objectY -= Math.sin((t - 3.4) / .5 * Math.PI) * 2;
+      // The shadow appears gradually as the object approaches the seabed.
+      ctx.globalAlpha = .22 * fall * fall;
+      rect(targetX - 5, 141, 11, 1, colors.rock);
+      ctx.globalAlpha = 1;
+      object(targetX + drift, objectY);
+      if (t >= 3.4 && t < 4.2) {
+        const settle = (t - 3.4) / .8;
+        ctx.globalAlpha = (1 - settle) * .65;
+        for (const side of [-1, 1]) {
+          rect(targetX + side * (6 + settle * 13), 140 - Math.sin(settle * Math.PI) * 4, 2, 1, colors.sand);
+          rect(targetX + side * (4 + settle * 8), 140 - Math.sin(settle * Math.PI) * 2, 1, 1, colors.sand);
+        }
+        ctx.globalAlpha = 1;
+      }
+    }
 
     // Soft, stepped shadow beneath the vehicle.
     ctx.globalAlpha = .18;
@@ -172,7 +191,7 @@
   }
 
   scenes.forEach((canvas) => {
-    let last = null, elapsed = 2.7;
+    let last = null, elapsed = 0;
     canvas.closest('.rov-scene').classList.add('is-ready');
     const wideScreen = matchMedia('(min-width: 701px)');
     const draw = () => render(canvas, elapsed);
