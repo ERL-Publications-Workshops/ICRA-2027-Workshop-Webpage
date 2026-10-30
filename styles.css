@@ -412,6 +412,46 @@ h1>span:not(.title-period){color:var(--hero-accent)}
   .footer-main p{order:3;max-width:none;margin:0}.footer-meta{align-items:flex-start;flex-direction:column;gap:6px;margin-top:20px;padding-top:18px}
   .design-credit{font-size:15px}.footer-meta .text-link{font-size:15px}.credits{margin-top:10px;font-size:13px}
 }
+.site-footer{--ink:#e7f1ee;--muted:#b0c8ca;--accent:#a4e5d5;--line:#365661;background:#103540;color:var(--ink);border-top:1px solid var(--line);padding:0}
+:root[data-theme="dark"] .site-footer{background:#041820;--line:#24414c}
+.footer-shell{padding-block:32px 20px}
+.footer-topline{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.footer-identity{display:inline-flex;align-items:center;gap:17px}
+.footer-identity>svg{width:46px;height:46px;flex:none;stroke:var(--accent);stroke-width:1.4}
+.footer-identity>span{display:flex;flex-direction:column;gap:7px}
+.footer-eyebrow{font-size:12px;line-height:1.2;letter-spacing:1.7px;font-weight:600;color:var(--muted)}
+.footer-identity strong{font:500 28px/1.15 'Space Grotesk',Arial,sans-serif;letter-spacing:-.025em}
+.footer-identity:hover strong{color:var(--accent)}
+.footer-actions{display:flex;align-items:center;gap:16px;flex:none}
+.footer-contact{display:inline-flex;align-items:center;gap:24px;padding:12px 18px;border:1px solid #688b92;border-radius:4px;font-size:16px;font-weight:650;line-height:1.5}
+.footer-contact span{font-size:21px;line-height:1}
+.footer-contact:hover{background:var(--accent);border-color:var(--accent);color:#082c35}
+.footer-top{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:50%}
+.footer-top svg{width:22px;height:22px;stroke:var(--ink);stroke-width:1.5}
+.footer-top:hover{border-color:var(--accent);background:#ffffff0a}
+.footer-bottomline{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 28px;padding-top:14px}
+.site-footer .design-credit{font-size:15px;line-height:1.6;color:var(--muted);margin:0}
+.site-footer .design-credit a{color:var(--accent);font-weight:650;text-decoration:none;border-bottom:1px solid #a4e5d566}
+.site-footer .design-credit a:hover{border-color:var(--accent)}
+.site-footer .credits{font-size:14px;color:var(--muted);border:0;margin:0;padding:0}
+.site-footer .credits summary{display:flex;align-items:center;justify-content:flex-end;gap:15px;list-style:none;min-height:44px;margin-left:auto;line-height:1.5}
+.site-footer .credits summary::-webkit-details-marker{display:none}
+.site-footer .credits summary:hover{color:var(--ink)}
+.footer-credits-symbol{font:400 24px/1 'Space Grotesk',sans-serif;color:var(--accent)}
+.site-footer .credits[open]{width:100%}
+.credits[open] .footer-credits-symbol{transform:rotate(45deg)}
+.site-footer .credits-content{border-top:1px solid var(--line);padding:18px 0 4px;max-width:1000px;line-height:1.75}
+.site-footer .credits-content p{max-width:none;margin:0}
+.site-footer .credits-content p+p{margin-top:14px}
+.site-footer .credits-content a{color:var(--ink);text-decoration-color:#688b92;overflow-wrap:anywhere}
+@media(max-width:700px){
+  .footer-shell{padding-block:28px 18px}.footer-topline{align-items:flex-start;flex-direction:column;gap:24px;padding-bottom:24px}
+  .footer-identity{gap:13px}.footer-identity>svg{width:39px;height:39px}.footer-identity strong{font-size:25px}.footer-eyebrow{font-size:11px;letter-spacing:1.4px}
+  .footer-actions{width:100%;justify-content:space-between}.footer-contact{font-size:16px;padding:11px 17px}
+  .footer-bottomline{align-items:flex-start;flex-direction:column;gap:8px;padding-top:20px}.site-footer .credits summary{margin-left:0;justify-content:flex-start}
+  .site-footer .design-credit{font-size:15px}.site-footer .credits{font-size:14px}
+}
+@media(max-width:380px){.footer-identity strong{font-size:22px}.footer-identity>svg{width:36px;height:36px}.footer-identity{gap:12px}}
 @media print{.logo-strip{display:none!important}.institution{grid-template-columns:120px 1fr}.brand-logo{break-inside:avoid}}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}*:not(.logo-track),*::before,*::after{animation:none!important}}
