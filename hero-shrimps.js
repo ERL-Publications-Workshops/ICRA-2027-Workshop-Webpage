@@ -3,15 +3,33 @@
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
-  const frame = canvas.closest('.hero-visual');
-  let elapsed = 0, last = null, lastPaint = 0, captionInset = 64;
+  const frame = canvas.closest('.hero');
+  const grid = frame.querySelector('.hero-grid');
+  const copy = frame.querySelector('.hero-copy');
+  const photo = frame.querySelector('.hero-visual');
+  let elapsed = 0, last = null, lastPaint = 0;
+  let layout = {leftDepth:0,rightDepth:0,leftY:0,rightY:0};
 
   const resize = () => {
-    const pixelSize = frame.clientWidth < 450 ? 1.5 : 2;
+    const pixelSize = frame.clientWidth <= 700 ? 1.25 : 2;
     canvas.width = Math.ceil(frame.clientWidth / pixelSize);
     canvas.height = Math.ceil(frame.clientHeight / pixelSize);
-    const caption = frame.querySelector('figcaption');
-    if (caption) captionInset = Math.ceil((frame.clientHeight - caption.offsetTop + 12) / pixelSize);
+    const bounds=frame.getBoundingClientRect();
+    const content=grid.getBoundingClientRect();
+    const text=copy.getBoundingClientRect();
+    const image=photo.getBoundingClientRect();
+    if(image.top>=text.bottom){
+      // On mobile, the empty gap between the copy and photo is a safe edge lane.
+      const y=((text.bottom+image.top)/2-bounds.top)/pixelSize-9;
+      layout={leftDepth:42/pixelSize,rightDepth:42/pixelSize,leftY:y,rightY:y};
+    }else{
+      layout={
+        leftDepth:Math.max(0,Math.min(60,content.left-bounds.left-8))/pixelSize,
+        rightDepth:Math.max(0,Math.min(60,bounds.right-content.right-8))/pixelSize,
+        leftY:canvas.height*.48-9,
+        rightY:canvas.height*.72-9
+      };
+    }
     ctx.imageSmoothingEnabled = false;
   };
   const pixel = (x, y, w, h, color) => {
@@ -57,15 +75,16 @@
 
   function draw() {
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    const w=canvas.width,h=canvas.height;
-    const first=elapsed/34;
-    const second=elapsed/47+.34;
-    const firstTravel=(1-Math.cos(first*Math.PI*2))/2;
-    const secondTravel=(1-Math.cos(second*Math.PI*2))/2;
-    const left=12+firstTravel*Math.max(10,w*.42-50);
-    const right=w-14-secondTravel*Math.max(10,w*.24-30);
-    shrimp(left+(Math.sin(first*Math.PI*2)<0?39:0),h-captionInset-18,Math.sin(first*Math.PI*2)<0?-1:1,elapsed);
-    shrimp(right-(Math.sin(second*Math.PI*2)<0?39:0),h-captionInset-43,Math.sin(second*Math.PI*2)<0?1:-1,elapsed+2,true);
+    const peek = (offset) => {
+      const phase=(elapsed+offset)%20;
+      if(phase<1||phase>=6)return 0;
+      if(phase>=2.5&&phase<4)return 1;
+      const p=phase<2.5?(phase-1)/1.5:(6-phase)/2;
+      return p*p*(3-2*p);
+    };
+    const left=peek(0),right=peek(10);
+    if(left>0)shrimp(-41+layout.leftDepth*left,layout.leftY,1,elapsed);
+    if(right>0)shrimp(canvas.width+41-layout.rightDepth*right,layout.rightY,-1,elapsed+2,true);
   }
   function tick(now) {
     if(last!==null)elapsed+=Math.min((now-last)/1000,.1);
@@ -73,7 +92,11 @@
     if(now-lastPaint>1000/24){draw();lastPaint=now}
     requestAnimationFrame(tick);
   }
-  if('ResizeObserver' in window)new ResizeObserver(resize).observe(frame);
-  else addEventListener('resize',resize);
+  if('ResizeObserver' in window){
+    const observer=new ResizeObserver(resize);
+    [frame,grid,copy,photo].forEach(element=>observer.observe(element));
+  }
+  addEventListener('resize',resize);
+  document.fonts?.ready.then(resize);
   resize();draw();requestAnimationFrame(tick);
 })();

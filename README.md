@@ -20,7 +20,7 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
 - `rov-animation.js`: pixel BlueROV2 loops with drifting, settling objects and repeat pickups in the overview and challenge page.
-- `hero-shrimps.js`: two small decorative pixel shrimps with robotic grippers strolling within the hero image.
+- `hero-shrimps.js`: two small decorative pixel shrimps with robotic grippers peeking in and retreating from the outer hero edges. They stay outside the photograph and copy, with staggered hidden intervals.
 - `scripts/illustrate-uvms.py`: standard-library source for the projected vehicle concept SVG. Run it from this repository to regenerate the figure.
 - `app.js`: theme selection, mobile navigation, active section tracking and continuous logo-strip animation.
 - `assets/`: self-hosted images, institutional logos, fonts and favicon. `portrait-sources.json` and `logo-sources.json` record their sources.

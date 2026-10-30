@@ -72,7 +72,7 @@ body{transition:background-color .18s ease,color .18s ease}
 
 .hero{position:relative;background:var(--surface);overflow:hidden}
 .hero-waves{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,transparent,black)}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.12fr 1fr;gap:42px;padding-top:58px;padding-bottom:50px;align-items:stretch}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr 1fr;gap:42px;padding-top:58px;padding-bottom:50px;align-items:stretch}
 .hero-copy{z-index:2;padding-top:6px}
 .hero-copy .eyebrow{font-size:13px;letter-spacing:1.1px;display:flex;gap:9px;align-items:center;margin-bottom:32px}
 .small-cross{font-size:27px;line-height:1;color:var(--accent);font-weight:400}
@@ -92,7 +92,7 @@ h1>span:not(.title-period){color:var(--hero-accent)}
 .hero-image{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:68% 50%;filter:saturate(.55) brightness(.85)}
 .image-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,38,48,.3),transparent 40%,rgba(2,24,32,.9));z-index:1}
 .hero-visual::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 70px 10px #02394355;pointer-events:none;z-index:1}
-.hero-shrimps{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;image-rendering:pixelated;image-rendering:crisp-edges;opacity:.78}
+.hero-shrimps{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;image-rendering:pixelated;image-rendering:crisp-edges;opacity:.78}
 .visual-heading{position:absolute;top:24px;left:25px;right:25px;display:flex;justify-content:space-between;font-size:13px;font-weight:700;letter-spacing:2px;color:#d9f7ee;z-index:3}
 .visual-heading span:last-child{font-size:24px;line-height:1}
 .sonar{position:absolute;top:50%;left:50%;width:112%;transform:translate(-50%,-50%);stroke:#caeee4;stroke-width:.7;opacity:.3;z-index:2}
