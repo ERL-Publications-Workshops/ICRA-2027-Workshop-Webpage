@@ -32,6 +32,23 @@ jobs:
           mkdir _site
           cp index.html challenge.html sponsors-institutions.html styles.css theme.js app.js rov-animation.js hero-shrimps.js .nojekyll _site/
           cp -R assets _site/assets
+      - name: Check out publishing repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: shrimp-workshop/shrimp-workshop.github.io
+          ref: main
+          path: publishing
+          ssh-key: ${{ secrets.SHRIMP_PUBLISH_KEY }}
+      - name: Publish to shrimp-workshop.github.io
+        run: |
+          rsync -a --delete --exclude='.git/' --exclude='README.md' _site/ publishing/
+          git -C publishing config user.name 'github-actions[bot]'
+          git -C publishing config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C publishing add --all
+          if ! git -C publishing diff --cached --quiet; then
+            git -C publishing commit -m "Publish website from ${GITHUB_SHA::12}"
+            git -C publishing push origin HEAD:main
+          fi
       - name: Upload website
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:

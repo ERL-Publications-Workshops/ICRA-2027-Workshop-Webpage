@@ -35,7 +35,9 @@ Every footer credits the design to Alp Ortakci and links to his website. The pub
 
 ## GitHub Pages
 
-The website is published at <https://erl-publications-workshops.github.io/ICRA-2027-Workshop-Webpage/>. The workflow in `.github/workflows/deploy-pages.yml` deploys every push to `main`. It can also be run manually from the repository's Actions tab. Repository Settings > Pages must use **GitHub Actions** as the publishing source.
+The main website is <https://shrimp-workshop.github.io/>. This ERL repository remains the source for all editing and commits. The workflow in `.github/workflows/deploy-pages.yml` copies the website to [the publishing repository](https://github.com/shrimp-workshop/shrimp-workshop.github.io) on every push to `main`, using the repository-scoped `SHRIMP_PUBLISH_KEY` Actions secret. It can also be run manually from the Actions tab. Edit this source repository, not the publishing copy.
+
+The publishing repository serves its `main` branch root through GitHub Pages. This source repository also continues deploying at <https://erl-publications-workshops.github.io/ICRA-2027-Workshop-Webpage/> with **GitHub Actions** selected in Settings > Pages. Both addresses receive the same website files.
 
 Only the three HTML pages, styles, browser scripts and assets are included in the deployment. No build step or package installation is required. All internal asset paths are relative, so the repository URL prefix and a future custom domain both work. `.nojekyll` disables unnecessary processing.
 
