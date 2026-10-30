@@ -1,7 +1,6 @@
 (() => {
   const scenes = [...document.querySelectorAll('.rov-scene canvas')];
   if (!scenes.length) return;
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const root = document.documentElement;
   let dark = root.dataset.theme === 'dark';
   const ease = (a, b, p) => a + (b - a) * (p * p * (3 - 2 * p));
@@ -173,30 +172,18 @@
   }
 
   scenes.forEach((canvas) => {
-    let visible = false, last = null, elapsed = 2.7, frame = 0;
+    let last = null, elapsed = 2.7;
     canvas.closest('.rov-scene').classList.add('is-ready');
     const wideScreen = matchMedia('(min-width: 701px)');
-    const draw = () => render(canvas, motion.matches ? 6.1 : elapsed);
+    const draw = () => render(canvas, elapsed);
     const resize = () => { canvas.width = canvas.closest('.challenge-playground') && wideScreen.matches ? 480 : 320;draw(); };
     function tick(now) {
-      frame = 0;
-      if (!visible || document.hidden || motion.matches) { last = null; return; }
       if (last !== null) elapsed += Math.min((now-last)/1000, .1);
-      last = now;draw();frame = requestAnimationFrame(tick);
+      last = now;draw();requestAnimationFrame(tick);
     }
-    function sync() {
-      if (frame) cancelAnimationFrame(frame);
-      frame = 0;last = null;draw();
-      if (visible && !document.hidden && !motion.matches) frame = requestAnimationFrame(tick);
-    }
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting;sync(); }, {rootMargin:'40px'});
-      observer.observe(canvas);
-    } else { visible = true;sync(); }
-    motion.addEventListener('change',sync);
     wideScreen.addEventListener('change',resize);
-    document.addEventListener('visibilitychange',sync);
     new MutationObserver(() => { dark = root.dataset.theme === 'dark';draw(); }).observe(root,{attributes:true,attributeFilter:['data-theme']});
     resize();
+    requestAnimationFrame(tick);
   });
 })();
