@@ -53,12 +53,13 @@
   });
   window.matchMedia('(min-width: 1201px)').addEventListener('change', closeMenu);
 
-  if ('IntersectionObserver' in window) {
+  const sectionLinks = [...nav.querySelectorAll('a[href^="#"]')];
+  if ('IntersectionObserver' in window && sectionLinks.length) {
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        nav.querySelectorAll('a').forEach((link) => {
+        sectionLinks.forEach((link) => {
           if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
           else link.removeAttribute('aria-current');
         });

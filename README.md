@@ -14,11 +14,15 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 
 ## Editing
 
-- `index.html`: workshop copy, programme, speakers, organizers, Call for Papers and Sponsors sections.
+- `index.html`: workshop overview, programme, speakers and organizers.
+- `call-for-papers.html`: the planned contribution format, topics and submission status.
+- `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
 - `theme.js`: applies the saved preference before first paint.
 - `app.js`: theme selection, mobile navigation and active section tracking.
-- `assets/`: self-hosted images, fonts and favicon.
+- `assets/`: self-hosted images, fonts and favicon. `portrait-sources.json` records the portrait sources.
+
+Each page has its own title, main heading and navigation state. Header, footer and theme-control markup are present in each HTML file so the entire site works without a build step. Keep that shared markup consistent when editing. All page and asset links are relative for GitHub Pages repository hosting.
 
 The theme control offers direct **Light**, **Dark** and **Use device setting** buttons. The sun, moon and monitor icons select the mode in one click. Keyboard arrow keys move between modes. The preference persists across reloads and stays synchronized between tabs. All core content and links remain available without JavaScript. Motion respects the system preference for reduced motion.
 
@@ -30,7 +34,7 @@ Before public release, review the workshop title, acceptance status, date, locat
 
 ## Content and image sources
 
-Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Organizer initials stand in for portraits still being collected.
+Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Portraits are present for all three speakers and seven organizers. Moritz Graf's initials remain until a verified portrait is available.
 
 The Call for Papers section describes the planned two-page abstracts and presentation formats. Submissions are not open, and dates and review rules remain unconfirmed. The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 
@@ -43,5 +47,12 @@ Draft portraits were sourced from public professional profiles, as discussed for
 | `corina-barbalata.png` | [LSU faculty profile](https://www.lsu.edu/eng/mie/people/faculty/barbalata.php) |
 | `marco-tognon.jpg` | [Marco Tognon's research website](https://marco-tognon-robotics.com/) |
 | `stefan-sosnowski.webp` | [TUM ITR profile](https://www.ce.cit.tum.de/en/itr/sosnowski/) |
+| `daniel-duecker.jpg` | [HippoCampus Robotics team](https://hippocampusrobotics.github.io/people/) |
+| `pawel-ladosz.jpg` | [CRADLE team](https://cradlerobotics.co.uk/about/team/) |
+| `nathalie-bauschmann.jpg` | [TU Hamburg profile](https://www.tuhh.de/mum/team/wimi/nathalie-bauschmann) |
+| `giancarlo-troni.jpg` | [MBARI annual report](https://annualreport.mbari.org/2023/) |
+| `seyonne-leslie-dalley.png` | [Seyonne's research website](https://sladalley.github.io/) |
+| `alp-ortakci.jpg` | [Alp's personal website](https://www.alportakci.com/) |
+| `michele-grimaldi.png` | [Ignacio Carlucho's group page](https://ignaciocarlucho.github.io/People/) |
 
 Manrope and Space Grotesk are self-hosted under the SIL Open Font License. Their license texts are included beside the font files. No analytics, external font services, cookies or third-party scripts are included. Local storage contains only the color-theme preference.
