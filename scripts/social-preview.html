@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SHRIMP sharing image</title>
+  <style>
+    @font-face{font-family:Space;src:url('../assets/fonts/space-grotesk.ttf')}@font-face{font-family:Manrope;src:url('../assets/fonts/manrope.ttf')}
+    *{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+    body{color:#edf7f3;background:#061f2b;font-family:Manrope,sans-serif}
+    main{position:relative;isolation:isolate;width:1200px;height:630px;text-align:center;background:radial-gradient(ellipse at 80% 15%,#215b6155,transparent 60%),radial-gradient(ellipse at 15% 95%,#08605c44,transparent 55%)}
+    .contours{position:absolute;inset:0;z-index:-1;width:100%;height:100%;fill:none;stroke:#6cc7bd;stroke-width:1;opacity:.18}
+    .eyebrow{position:absolute;top:43px;left:0;right:0;margin:0;color:#a4d5d0;font-size:18px;font-weight:600;letter-spacing:3px}
+    .logo{position:absolute;top:87px;left:500px;width:200px;height:200px;object-fit:contain}
+    h1{position:absolute;top:286px;left:0;right:0;margin:0;font:600 112px/1 Space,sans-serif;letter-spacing:-7px}
+    h1 span{color:#65d8c3}
+    .expansion{position:absolute;top:423px;left:285px;width:630px;margin:0;font:400 25px/1.5 Space,sans-serif;color:#c7e1df;letter-spacing:-.3px}
+    .subtitle{position:absolute;bottom:43px;left:0;right:0;margin:0;font-size:18px;font-weight:500;letter-spacing:.2px;color:#a2bfca}
+    .rule{position:absolute;left:570px;bottom:91px;width:60px;height:2px;background:#65d8c3}
+  </style>
+</head>
+<body>
+  <main>
+    <svg class="contours" viewBox="0 0 1200 630" aria-hidden="true">
+      <path d="M-150 800C400 670-180 180 270-160M-95 800C455 670-125 180 325-160M-40 800C510 670-70 180 380-160M15 800C565 670-15 180 435-160"/>
+      <path d="M930-170C1390 260 770 410 1270 800M985-170C1445 260 825 410 1325 800M1040-170C1500 260 880 410 1380 800M1095-170C1555 260 935 410 1435 800"/>
+    </svg>
+    <p class="eyebrow">ICRA 2027 · UNDERWATER ROBOTICS</p>
+    <img class="logo" src="../assets/logos/shrimp.png" alt="" width="1254" height="1254">
+    <h1>SHRIMP<span>.</span></h1>
+    <p class="expansion">Small-scale Hardware and Robotics for<br>Intervention and Manipulation in Practice</p>
+    <span class="rule" aria-hidden="true"></span>
+    <p class="subtitle">Dronification of Underwater Robotics</p>
+  </main>
+</body>
+</html>
