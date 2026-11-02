@@ -30,7 +30,7 @@ jobs:
       - name: Prepare website files
         run: |
           mkdir _site
-          cp index.html challenge.html sponsors-institutions.html styles.css theme.js app.js rov-animation.js hero-shrimps.js .nojekyll _site/
+          cp index.html challenge.html call-for-papers.html sponsors-institutions.html styles.css theme.js app.js rov-animation.js hero-shrimps.js .nojekyll _site/
           cp -R assets _site/assets
       - name: Check out publishing repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6

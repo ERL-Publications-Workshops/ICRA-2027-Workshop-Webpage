@@ -15,6 +15,7 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 ## Editing
 
 - `index.html`: workshop overview, programme, speakers and organizers.
+- `call-for-papers.html`: two-page abstracts, review criteria, participation format and submission status from the updated proposal.
 - `challenge.html`: simulation challenge, planned setup, participation route and resource status.
 - `sponsors-institutions.html`: institutions represented by organizers and speakers, plus sponsorship enquiries.
 - `styles.css`: responsive layout and both ocean-inspired color palettes.
@@ -22,10 +23,10 @@ Then visit <http://127.0.0.1:8080>. No build step or dependency installation is 
 - `rov-animation.js`: pixel BlueROV2 loops with drifting, settling objects and repeat pickups in the overview and challenge page.
 - `hero-shrimps.js`: two small decorative pixel shrimps with robotic grippers peeking in and retreating from the outer hero edges. They stay outside the photograph and copy, with staggered hidden intervals.
 - `scripts/illustrate-uvms.py`: standard-library source for the projected vehicle concept SVG. Run it from this repository to regenerate the figure.
-- `app.js`: theme selection, mobile navigation, active section tracking and continuous logo-strip animation.
+- `app.js`: theme selection, mobile navigation, the People dropdown, active section tracking and continuous logo-strip animation.
 - `assets/`: self-hosted images, institutional logos, fonts and favicon. `portrait-sources.json` and `logo-sources.json` record their sources.
 
-Each page has its own title, main heading and navigation state. Header, footer and theme-control markup are present in each HTML file so the entire site works without a build step. Keep that shared markup consistent when editing. All page and asset links are relative for GitHub Pages repository hosting.
+Each page has its own title, main heading and navigation state. The header logo links to the workshop overview. Speakers and organizers are grouped under the native People disclosure, which supports keyboard, touch and use without JavaScript. Header, footer and theme-control markup are present in each HTML file so the entire site works without a build step. Keep that shared markup consistent when editing. All page and asset links are relative for GitHub Pages repository hosting.
 
 The theme control offers direct **Light**, **Dark** and **Use device setting** buttons. The sun, moon and monitor icons select the mode in one click. Keyboard arrow keys move between modes. The preference persists across reloads and stays synchronized between tabs. All core content and links remain available without JavaScript. Nonessential transitions respect the system preference for reduced motion.
 
@@ -39,7 +40,7 @@ The main website is <https://shrimp-workshop.github.io/>. This ERL repository re
 
 The publishing repository serves its `main` branch root through GitHub Pages. This source repository also continues deploying at <https://erl-publications-workshops.github.io/ICRA-2027-Workshop-Webpage/> with **GitHub Actions** selected in Settings > Pages. Both addresses receive the same website files.
 
-Only the three HTML pages, styles, browser scripts and assets are included in the deployment. No build step or package installation is required. All internal asset paths are relative, so the repository URL prefix and a future custom domain both work. `.nojekyll` disables unnecessary processing.
+Only the four HTML pages, styles, browser scripts and assets are included in the deployment. No build step or package installation is required. All internal asset paths are relative, so the repository URL prefix and a future custom domain both work. `.nojekyll` disables unnecessary processing.
 
 The workshop proposal remains a work in progress. The pages retain `noindex, nofollow` metadata while the name and programme are being finalized. This metadata does not make the published website private. A custom domain can be configured later without changing the site's page structure.
 
@@ -47,7 +48,7 @@ The workshop proposal remains a work in progress. The pages retain `noindex, nof
 
 Content follows the supplied workshop proposal and the 30 October 2026 meeting. The morning timetable is tentative. The three named speakers are listed as confirmed in that proposal. The industry slot remains pending. Portraits are present for all three speakers and eight organizers.
 
-The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The dedicated challenge page describes the proposed TU Hamburg ROS 2/Gazebo framework, teleoperated and autonomous baselines, participation without physical underwater hardware, and planned workshop presentations. Its February 2027 release remains subject to workshop acceptance. The homepage feature uses the generic UVMS concept illustration in `assets/images/challenge-uvms.svg`. The new challenge page and workshop overview use an original pixel BlueROV2 animation. Neither illustration specifies the actual challenge platform or task. Each object drifts in from above, settles on the seabed with a small sediment puff, and is then collected. The animated robot closes its gripper, lifts the object, leaves the frame, and returns from the opposite side. Objects change between loops. The pixel scene starts immediately and loops continuously, including when the device requests reduced motion, as requested. It does not depend on intersection or visibility callbacks to start. The visual reference is Blue Robotics’ [vehicle and gripper guide](https://bluerobotics.com/learn/newton-subsea-gripper-installation/). The separate Call for Papers page and its navigation have been removed at Alp’s request. Final dates, review rules, challenge resources, sponsorship and remote services remain unconfirmed.
+The proposal is a work in progress. Public copy summarizes its scope and planned format without converting internal TODOs into commitments. The dedicated challenge page describes the proposed TU Hamburg ROS 2/Gazebo framework, teleoperated and autonomous baselines, participation without physical underwater hardware, and planned workshop presentations. Its February 2027 release remains subject to workshop acceptance. The homepage feature uses the generic UVMS concept illustration in `assets/images/challenge-uvms.svg`. The new challenge page and workshop overview use an original pixel BlueROV2 animation. Neither illustration specifies the actual challenge platform or task. Each object drifts in from above, settles on the seabed with a small sediment puff, and is then collected. The animated robot closes its gripper, lifts the object, leaves the frame, and returns from the opposite side. Objects change between loops. The pixel scene starts immediately and loops continuously, including when the device requests reduced motion, as requested. It does not depend on intersection or visibility callbacks to start. The visual reference is Blue Robotics’ [vehicle and gripper guide](https://bluerobotics.com/learn/newton-subsea-gripper-installation/). The Call for Papers page follows the updated proposal read on 2 November 2026: two-page abstracts, two constructive reviews, up to ten regular contributions, poster space and a selected five-minute lightning talk or two-minute pitch for each accepted contribution, and a Community Poster Award. Submission deadline, upload link and formatting guidance are not provided and remain to be announced. The Google Doc was read only and was not edited.
 
 The Sponsors section accepts enquiries through the primary contact; no sponsors, prices or benefits are claimed.
 
